@@ -1,7 +1,6 @@
 #!/usr/bin/python
 import math, string, sys, fileinput
 import numpy as np
-
 # this code computes the approximate entropy used to quantify the amount of
 # regularity and the unpredictability of fluctuations over time-series data. In
 # our context it will be used to check the patterns of start sesssions of each
