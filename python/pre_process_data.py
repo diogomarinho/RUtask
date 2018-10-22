@@ -22,6 +22,7 @@ tail
 The main function of this file is prepare_data which returns a dataframe with the user features
 '''
 
+
 # Same idea of a z-score but for the median
 def median_zscore(x):
     return(1.4826 * ((x - np.median(x)) / robust.mad(x)))
@@ -150,12 +151,12 @@ def process(users, streams):
 # main data which filter in or out user based on their IDs and recompute features
 def prepare_data():
     print('Loading files')
-    #users, tracks, streams = load_files_from_gs() # unmcoment for final version
-    users, tracks, streams = load_files_from_disk   (
-        '~/fdmusic/downloaded/users.csv.gz',
-            '~/fdmusic/downloaded/tracks.csv.gz',
-            '~/fdmusic/downloaded/streams.csv.gz'
-    )
+    users, tracks, streams = load_files_from_gs() # unmcoment for final version
+    # users, tracks, streams = load_files_from_disk   (
+    #     '~/fdmusic/downloaded/users.csv.gz',
+    #         '~/fdmusic/downloaded/tracks.csv.gz',
+    #         '~/fdmusic/downloaded/streams.csv.gz'
+    # )
 
     print('Merging stream log with track files')
     # adding track information with the log
@@ -195,7 +196,7 @@ def prepare_data():
     to_remove = list(set(to_remove))
 
 
-    
+
     # recalculating valid users
     valid_users = user_features_df.loc[~user_features_df.index.isin(to_remove), :].index.values
 
