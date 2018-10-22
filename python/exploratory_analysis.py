@@ -12,6 +12,7 @@ from sklearn.externals import joblib
 from sklearn.neighbors import LocalOutlierFactor
 from sklearn.ensemble import IsolationForest
 
+
 import os
 # 20/10/2018
 
